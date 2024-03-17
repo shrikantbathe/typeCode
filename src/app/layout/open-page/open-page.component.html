@@ -1,0 +1,3 @@
+<div *ngIf="(_appService._appData$ | async) as appDataObj">
+    <div *ngIf="!!appDataObj.name">{{appDataObj.name}}</div>
+</div> 

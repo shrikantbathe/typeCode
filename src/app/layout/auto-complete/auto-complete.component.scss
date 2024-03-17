@@ -1,0 +1,181 @@
+@itemWidth: 49px;
+
+.search-section {
+    margin-top: 22px;
+    width: 498px;
+}
+
+.search-border-none {
+    border: none !important;
+    border-bottom: 1px solid #949494 !important;
+}
+
+.search-results {
+    background: #FFFFFF;
+    border: 1px solid #DADADA;
+      
+    z-index: 999;
+}
+
+.search-result {
+    background-color: white;
+    border-left: 1px solid #e2e2e2;
+    border-right: 1px solid #e2e2e2;
+    color: #4a4a4a;
+    cursor: pointer;
+    width: "calc (100% @{itemWidth))";
+    height: 100%;
+    padding: 5px 10px;
+    z-index: 9999;
+    width: 496px;
+    
+     
+}
+
+.consolidated-new-width {
+    width: 430px !important;
+}
+
+.search-result:first-child {
+    padding-top: 10px;
+}
+
+.search-result:last-child {
+    border-bottom: 1px solid #e2e2e2;
+    font-weight: 600;
+    padding-bottom: 10px;
+}
+
+.search-result:hover {
+    color: #eee;
+    background-color: #607D8B;
+}
+
+
+#search-box {
+    height: 100%;
+    width: 100%;
+}
+
+.icon {
+
+    vertical-align: middle;
+    font-weight: normal;
+    font-style: normal; 
+    text-decoration: inherit;
+    text-transform: none;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow: visible;
+    text-align: center;
+    margin-top: -2px;
+}
+
+.ui-kit-close-1 {
+content: "e91b";
+}
+
+.autocomplete-input-wrapper {
+    display: flex;
+    position: relative;
+}
+
+.autocomplete-clear-input { 
+    position: absolute;
+    right: 58px;
+    top: 13px;
+    z-index: 4;
+}
+
+
+#autoSuggest Input {
+    border: 1px solid #dadada;
+    border-radius: 0;
+    color: #4a4a4a;
+    font-size: 14px;
+    height: 40px;
+    padding-right: 30px;
+    width: "calc (100% - 48px)";
+    z-index: 0;
+}
+
+input[type=text]::-ms-clear {
+    display: none;
+}
+
+
+
+#autoCompleteWrapper .btn {
+    border-radius: 0;
+    height: 40px;
+    padding: 5px 15px;
+}
+
+.searchresult-sealid,
+.searchresult-name {
+    vertical-align: top;
+    word-wrap: normal;
+}
+
+.searchresult-name-small {
+    max-width: 260px;
+}
+
+.searchresult-name-large {
+    max-width: 237px;
+}
+
+.search-app-launch {
+    color: darkorange;
+    font-weight: 600;
+    margin-top: -2px;
+    padding-left: 3px;
+}
+
+
+
+.country-region-link {
+
+    a {
+
+
+        vertical-align: text-bottom;
+
+        i {
+            font-weight: 600;
+        }
+    }
+}
+
+.disableFocus:hover {
+    cursor: default;
+}
+
+.disableFocus.btn-success:hover {
+    color: #ffffff;
+    background-color: #8CC152;
+    border-color: #7fb842;
+
+}
+
+.scrollable {
+    overflow-y: auto;
+    max-block-size: 215px;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrolbar-track {
+    background: #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

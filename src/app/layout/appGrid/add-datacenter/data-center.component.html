@@ -1,0 +1,78 @@
+<div *ngIf="show" class="add-dependency-container">
+    <div>&nbsp;</div>
+    <form [formGroup]="dataCenterForm.asFormGroup">
+
+        <div class="row">
+
+            <div class='controls-wrapper'>
+                <div>
+                    <div class='disp-flex'>
+                        <label>Destination Type</label>
+                        <strong class="required"></strong>
+                    </div>
+                    <select class="form-control" formControlName="type">
+                        <option value="-1">Select</option>
+                        <option *ngFor="let option of dataCenterForm.typeOptions" [value]="option">{{option}}
+                        </option>
+                    </select>
+                </div>
+                <div>
+                    <div class='disp-flex'>
+                        <label>Destination Region</label>
+                        <strong class="required"></strong>
+                    </div>
+
+                    <select class="form-control" formControlName="region">
+                        <option value="-1">Select</option>
+                        <option *ngFor="let option of dataCenterForm.regionOptions" [value]="option">{{option}}
+                        </option>
+                    </select>
+                </div>
+                <div>
+                    <div class='disp-flex'>
+                        <label>Destination Country</label>
+                        <strong class="required"></strong>
+                    </div>
+                    <select class="form-control" formControlName="destinationCountry">
+                        <option value="-1">Select</option>
+                        <option *ngFor="let option of dataCenterForm.countryOptions" [value]="option">{{option}}
+                        </option>
+                    </select>
+                </div>
+                <div>
+                    <div class='disp-flex'>
+                        <label>Destination Environment</label>
+                        <strong class="required"></strong>
+                    </div>
+
+
+                    <select class="form-control" formControlName="environment">
+
+                        <option value="-1">Select</option>
+                        <option *ngFor="let option of dataCenterForm.environmentOptions " [value]="option">
+                            {{option}}</option>
+                    </select>
+                </div>
+                <div>
+                    <div class='disp-flex'>
+                        <label>Destination Data Center</label>
+                        <strong class="required"></strong>
+                    </div>
+                    <input type="text" id="name" formControlName="value" />
+
+
+                </div>
+                <div>&nbsp;</div>
+                <!-- Actions -->
+                <div class="col-md-12 col-xs-12 pt-20 flex-reverse mb-25">
+                    <button type="button" class="btn btn-danger btn-sm ml-26" (click)="onCancel()">
+                        CANCEL</button>&nbsp;
+                    <button type="button" class="btn btn-success btn-sm" [disabled]="dataCenterForm.inValidity$ | async"
+                        (click)="onSave()">
+                        SAVE</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</div>

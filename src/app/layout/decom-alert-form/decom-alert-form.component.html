@@ -1,0 +1,38 @@
+<div>
+    <div>{{stockId}}</div>
+    <br/>
+    <form [formGroup]="decomAlertForm">
+ 
+        <div>
+            <select #selectOpt *ngIf="(_service.reasonSelect$ | async) as reasonSelect" name='reasonSelect'
+                (change)="onReasonChange()" [formControl]="sector" class="form-control width">
+
+                <option value=''>Select</option>
+
+                <option *ngFor="let option of reasonSelect" [value]=option>
+                    {{option}}
+                </option>
+            </select>
+        </div>
+
+        <br />
+
+        <div [style.display]="showDate ? 'block' : 'none'">
+            <my-date-picker name="activityDate" [selDate]="selDate" (inputFocusBlur)="onReasonChange()"
+                [formControl]="activityDate"></my-date-picker>
+        </div>
+
+        <br/>
+
+        <div [style.display]="showComment ? 'block' : 'none'">
+            <textarea [placeholder]="commentTextLabel" class="form-control" [attr.maxLength]=2000
+                [formControl]="comment" (input)="onReasonChange()"></textarea>
+        </div>
+
+        <br/>
+
+        <button class="btn btn-primary" (click)="onSubmitClick()">Submit</button>&nbsp;
+        <button class="btn btn-primary" (click)="openToaster()">Open Toaster Message</button>
+</form>
+
+</div>

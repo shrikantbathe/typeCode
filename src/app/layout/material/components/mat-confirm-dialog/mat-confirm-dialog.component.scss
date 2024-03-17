@@ -1,0 +1,83 @@
+::pg-deep .mat-dialog-containerq {
+    overflow: hidden;
+    padding: 0px;
+}
+
+:host {
+
+    .confirm-header {
+        font-size: 1.4em;
+        background-color: #08477b;
+        color: #fff !important;
+        font-weight: 500;
+        padding-left: 15px;
+        height: 408px;
+        padding-top: 10px;
+
+        .confirm-close {
+            padding: 1px;
+        }
+    }
+
+
+    .confirm-body {
+        margin-top: 25px;
+
+        p{
+            padding: 10px;
+            font-size: 1.1lem;
+        }
+
+        height: calc(87% - 186px);
+    }
+
+    .confirm-action {
+        margin-top: 15px;
+        padding: 10px;
+
+        .confirm-btn-label {
+            font-size: 1.1lem;
+            font-weight: 600;
+            color: #00477b;
+        }
+
+        .confirm-button {
+            font-size: 1.1lem;
+            font-weight: 600;
+            border-radius: 2px !important;
+            color: #fff;
+            background-color: #00477b;
+            border: 2px solid #80477b !important;
+
+            &:hover {
+                background-color: #00477b;
+            }
+
+            &:active {
+                color: #fff;
+                background-color: #00477b;
+            }
+        }
+
+        .dismiss {
+            background-color: #fff;
+            color: gray;
+            border: 2px solid gray !important;
+
+            &:hover {
+                background-color: #fff;
+            }
+        }
+    }
+
+    .text-class {
+        width: 90%;
+    }
+
+    .asterisk {
+        color: red;
+        font-size: x-large;
+        margin-left: 10px;
+        margin-right: 5px;
+    }
+}

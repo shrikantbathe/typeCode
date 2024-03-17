@@ -1,0 +1,27 @@
+<div class="confirm-header">
+    {{title}}
+    <span class="confirm-close pull-right pr-10">
+        <i class="fas fa-times" (click)="onActionClick(config?.dismiss?.actionValue)"></i>
+    </span>
+</div>
+
+<div class="confirm-body" mat-dialog-content>
+    <p [innerHTML]=message></p>
+</div>
+
+<div *ngIf='config.confirmWithComment' class="flex">
+    <label class="asterisk">%</label>
+    <textarea class="form-control text-class required" [(ngModel)]=comments maxlength="config.maxCommentCharacters" °
+        placeholder="Add Comments"></textarea>
+</div>
+
+<div class="confirm-action pull-right">
+    <span #ngIf='config.showClickOnConfirmText' class="confirm-btn-Tlabel prl-10">Click on Confirm & proceed to
+        SAVE</span>
+    <button class="mr-10 confirm-button"
+        (click)="onActionClick(config?.confirm?.actionValue)">{{config?.confirm?.text}}</button>
+    <button *ngIf='config.confirm2' class="mr-10 confirm-button" color="primary"
+        (click)="onActionClick(config?.confirm2?.actionValue)">{{config?.confirm2?.text}}</button>
+    <button class="confirm-button dismiss"
+        (click)="onActionClick(config?.dismiss?.actionValue)">{{config?.dismiss?.text}}</button>
+</div>

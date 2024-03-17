@@ -1,0 +1,33 @@
+
+<div HEIGHT="400PX">
+<form [formGroup]='_formService.stockForm' (ngSubmit)="onSubmitClick()"> 
+	
+    <br/>
+    <br/>
+    <br/>
+    <div> 
+        <input type="text"  id="name" formControlName="name"/>
+       
+    </div> <br/>  
+    <div>
+        <my-date-picker name= "myDate" formControlName="myDate" [selDate]='_formService.selDate' (dateChanged)="onDateChanged($event)"  [options]="myDatePickerOptions" required></my-date-picker>
+    </div>
+    <br/>
+    <div>
+        <textarea [attr.maxLength] ="2000" formControlName="comment" placeholder="placeholder text"></textarea>
+    </div>
+    <br/>
+    <div>
+        <button (click)="onClick()">Reset</button>&nbsp;
+        <button type="submit">Submit</button>
+    </div>
+
+    <br/>
+    <br/>
+    <br/>  <br/>
+    <br/>
+    <br/>  <br/>
+    <br/>
+    <br/>
+ 
+</form> </div>

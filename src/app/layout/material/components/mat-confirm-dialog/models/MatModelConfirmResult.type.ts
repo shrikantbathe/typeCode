@@ -1,0 +1,1 @@
+export type MatModelConfirmResult = 'Confirm' | 'Confirm2' | 'Cancel';

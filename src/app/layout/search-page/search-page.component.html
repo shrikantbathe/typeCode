@@ -1,0 +1,30 @@
+
+
+
+
+<div> 
+        <app-auto-complete (searchResultClick)="notifiedOnSearchResultClick($event)" [shouldShowSearchResults]='true'
+        [enablescrollInsearchResult]="true" [redirectOnSearchedItenClick]=false [disableSearchIconOnClick]=true
+        [disablesearchByEnter]=true [showsearch]=true [focusSearchbox]=true></app-auto-complete> 
+</div>
+
+
+
+ 
+<div>
+    <div *ngIf="(_facade.selfDeclaration$ | async) as state">
+
+
+        <ng-container *ngIf="state?.data as selfDelcaration">
+
+            <app-decom-alert-form [declarationInfo]="selfDelcaration" [isPopup]="false" [appRegCountryId]="2" [stockId]="selfDelcaration.stockId" (refreshFormData)="this._facade.refreshFormData()"
+            (notifyClearSearchResults)="notifiedOnSearchResultComplete()">
+    
+            </app-decom-alert-form>
+
+        </ng-container>
+
+
+
+    </div>
+</div>

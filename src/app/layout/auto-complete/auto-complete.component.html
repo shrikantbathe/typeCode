@@ -1,0 +1,57 @@
+<form name="autocomplete" (submit)="onFormSubmit (searchBox.value) ">
+    <div id="autoCompletewrapper">
+        <div>
+  
+            <!-- SEARCH SECTION --> 
+            <div class="input-group search-section col-md-8 col-sm-10 col-xs-12" [ngClass]="{'mt-o' : IshowSearch}">
+                <span class="autocomplete-input-wrapper">
+                    <input #searchBox type="text" class="form-control" [ngClass]="{'search-border-none': !showSearch}"
+                        [placeholder]="placeholderValue" autocomplete="off" name="searchBox" [ngModel]="searchvalue"
+                        (ngModelChange)="onSearchTermChange(searchBox.value)" id="autosuggestInput" />
+ 
+                    <i *ngIf="showClose" (click)="onClearSearchClick()"  class="icon uk-close-3 autocomplete-clear-input" uk-close></i>
+                    <button *ngIf="showSearch" type="button" [ngClass]="{'disableFocus': disableSearchIcononclick}"
+                        class="btn btn-success" (click)="onSearchClick (searchBox.value)">
+                        <i [ngClass]="{'disableFocus': disableSearchIconOnClick} "
+                            class="icon icon-s2 ui-kit-search"></i>
+                    </button>
+                </span>
+            </div>
+ 
+            <!-- RESULTS -->
+            <div *ngIf="showSearchResults" (focus)="true;"
+                [ngClass]='{"consolidated-new-width": showConsolidatedApps, "scrollable" : enableScrollInSearchResult}' class="search-result">
+                <!-- Result list -->
+                <div *ngFor="let searchResult of searchResults" (click)="onSearchedItemClick (searchResult)"
+                    class="search-result clearfix" [ngClass]='{"consolidated-new-width": showConsolidatedApps} '>
+                    <span class="searchresult-sealid">{{searchResult.name}}</span>
+                
+                    <span class="pull-right search-app-launch">
+                        <a>
+                            <i [ngClass]="redirectonSearchedItemClick ? 'icon ui-kit-link search-app-launch' : ''"></i>
+                        </a>
+                    </span>
+                    <span class="pull-right"> {{ searchResult.name }}   | {{ searchResult.name }}</span>
+                </div>
+
+                <!-- More -->
+                <!-- <div *ngIf="this.showMoreLink && !enableScrollInSearchResult" class="search-result"
+                    [ngClass]='{"consolidated-new-width": showConsolidatedApps}'>
+                    <a (click)="onSearchClick (searchBox.value)" title='Click here to get more results'>More...</a>
+                </div> -->
+            </div>
+            <!-- No results -->
+            <div *ngIf="noDataFound">
+                <div class="search-result clearfix" [ngclass]='{"consolidated-new-width": showConsolidatedApps}'>
+                    <span class="searchresult-sealid">No Stock Found</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div>
+        <button type="button" hidden="true"></button>
+    </div>
+</form>
+<!-- 
+<load-spinner [show]="loadSpinner" class="bundlelist-spinner"></load-spinner> -->
